@@ -63,14 +63,26 @@ export const supportedPools = [
   {
     pid: 12,
     lpAddresses: {
-      100: '0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d',
+      100: '0xac60b0316773ea5f4c4e86665d81a041a60670ac',
     },
     tokenAddresses: {
-      100: '0xFe148DDbFA0AB7b099D2054138Bb96219e59875F',
+      100: '0xdf613af6b44a31299e48131e9347f034347e2f00',
     },
-    name: 'Test Levin',
-    symbol: 'tLVN-WXDAI UNI-V2 LP',
-    tokenSymbol: 'tLVN',
+    name: 'Aave Token from Ethereum',
+    symbol: 'AAVE-WXDAI UNI-V2 LP',
+    tokenSymbol: 'AAVE',
+    icon: '🍣',
+  }, {
+    pid: 12,
+    lpAddresses: {
+      100: '0x75e75647cb13c168901a5923d8e3f69c14274a58',
+    },
+    tokenAddresses: {
+      100: '0xb7d311e2eb55f2f68a9440da38e7989210b9a05e',
+    },
+    name: 'STAKE Token from Ethereum',
+    symbol: 'STAKE-WXDAI UNI-V2 LP',
+    tokenSymbol: 'STAKE',
     icon: '🍣',
   },
 ]
