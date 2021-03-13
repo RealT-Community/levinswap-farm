@@ -84,5 +84,30 @@ export const supportedPools = [
     symbol: 'LPTB-STAKE-WXDAI UNI-V2 LP',
     tokenSymbol: 'LPTB-STAKE',
     icon: '🍣',
+  }, {
+    pid: 2,
+    lpAddresses: {
+      100: '0xe2eC0F6A6a664cd00B0c51A3db529E1c8a69a620',
+    },
+    tokenAddresses: {
+      100: '0xe2eC0F6A6a664cd00B0c51A3db529E1c8a69a620',
+    },
+    name: 'LP_Test_C',
+    symbol: 'LPTC',
+    tokenSymbol: 'LPTC',
+    icon: '🍣',
+  }, {
+    pid: 3,
+    lpAddresses: {
+      100: '0xc13721582de2D5b75B4B12e77f8688eA07Fd468A',
+    },
+    tokenAddresses: {
+      100: '0xc13721582de2D5b75B4B12e77f8688eA07Fd468A',
+    },
+    name: 'LP_Test_D',
+    symbol: 'LPTD',
+    tokenSymbol: 'LPTD',
+    icon: '🍣',
   },
+
 ]
