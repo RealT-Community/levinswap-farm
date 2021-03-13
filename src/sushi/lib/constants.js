@@ -31,10 +31,10 @@ export const addressMap = {
 
 export const contractAddresses = {
   sushi: {
-    100: '0x965769C9CeA8A7667246058504dcdcDb1E2975A5',
+    100: '0x145b5826B54B62A204af74e3Cb8c2FD7C9c70ff2',
   },
   masterChef: {
-    100: '0x77A44dF6Fb2Be7D33f648C550Af949A9327B82d7',
+    100: '0xEE5041345a208122eAfdd6ffF73D6AD730ec301e',
   },
   weth: {
     100: '0xe91d153e0b41518a2ce8dd3d7944fa863463a97d',
@@ -61,28 +61,28 @@ UNI-V2 LP Address on mainnet for reference
 
 export const supportedPools = [
   {
-    pid: 12,
+    pid: 0,
     lpAddresses: {
-      100: '0xac60b0316773ea5f4c4e86665d81a041a60670ac',
+      100: '0x90AAef6443942730fBAe414961735Af9C8568Cfb',
     },
     tokenAddresses: {
-      100: '0xdf613af6b44a31299e48131e9347f034347e2f00',
+      100: '0x90AAef6443942730fBAe414961735Af9C8568Cfb',
     },
     name: 'Aave Token from Ethereum',
-    symbol: 'AAVE-WXDAI UNI-V2 LP',
-    tokenSymbol: 'AAVE',
+    symbol: 'LPTA-AAVE-WXDAI UNI-V2 LP',
+    tokenSymbol: 'LPTA-AAVE',
     icon: '🍣',
   }, {
-    pid: 12,
+    pid: 1,
     lpAddresses: {
-      100: '0x75e75647cb13c168901a5923d8e3f69c14274a58',
+      100: '0xa33ee0715c3fd1580cdAb8d1d503378AfEade3c2',
     },
     tokenAddresses: {
-      100: '0xb7d311e2eb55f2f68a9440da38e7989210b9a05e',
+      100: '0xa33ee0715c3fd1580cdAb8d1d503378AfEade3c2',
     },
     name: 'STAKE Token from Ethereum',
-    symbol: 'STAKE-WXDAI UNI-V2 LP',
-    tokenSymbol: 'STAKE',
+    symbol: 'LPTB-STAKE-WXDAI UNI-V2 LP',
+    tokenSymbol: 'LPTB-STAKE',
     icon: '🍣',
   },
 ]
