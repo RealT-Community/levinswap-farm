@@ -1,19 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import './../../fonts/fonts.css'
 
 import Container from '../Container'
 
 interface PageHeaderProps {
-  icon: React.ReactNode
   subtitle?: string
   title?: string
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ icon, subtitle, title }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ subtitle, title }) => {
   return (
     <Container size="sm">
       <StyledPageHeader>
-        <StyledIcon>{icon}</StyledIcon>
         <StyledTitle>{title}</StyledTitle>
         <StyledSubtitle>{subtitle}</StyledSubtitle>
       </StyledPageHeader>
@@ -21,7 +20,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ icon, subtitle, title }) => {
   )
 }
 
-const StyledPageHeader = styled.div`
+const StyledPageHeader = styled.div` 
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -40,16 +39,16 @@ const StyledIcon = styled.div`
 `
 
 const StyledTitle = styled.h1`
-  font-family: 'Kaushan Script', sans-serif;
-  color: ${(props) => props.theme.color.grey[600]};
+  font-family: 'GT Haptik Regular';
+  color: #232a34;
   font-size: 36px;
   font-weight: 700;
-  margin: 0;
+  margin-bottom: 20px;
   padding: 0;
 `
 
 const StyledSubtitle = styled.h3`
-  color: ${(props) => props.theme.color.grey[400]};
+  color: #463e53;
   font-size: 18px;
   font-weight: 400;
   margin: 0;

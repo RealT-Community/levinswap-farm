@@ -29,11 +29,11 @@ const Button: React.FC<ButtonProps> = ({
   let buttonColor: string
   switch (variant) {
     case 'secondary':
-      buttonColor = color.grey[500]
+      buttonColor = '#fae5ec'
       break
     case 'default':
     default:
-      buttonColor = color.primary.main
+      buttonColor = '#fae5ec'
   }
 
   let boxShadow: string
@@ -42,14 +42,14 @@ const Button: React.FC<ButtonProps> = ({
   let fontSize: number
   switch (size) {
     case 'sm':
-      boxShadow = `4px 4px 8px ${color.grey[300]},
+      boxShadow = `4px 4px 8px #fae5ec,
         -8px -8px 16px ${color.grey[100]}FF;`
       buttonPadding = spacing[3]
       buttonSize = 36
       fontSize = 14
       break
     case 'lg':
-      boxShadow = `6px 6px 12px ${color.grey[300]},
+      boxShadow = `6px 6px 12px #fae5ec},
         -12px -12px 24px ${color.grey[100]}ff;`
       buttonPadding = spacing[4]
       buttonSize = 72
@@ -57,7 +57,7 @@ const Button: React.FC<ButtonProps> = ({
       break
     case 'md':
     default:
-      boxShadow = `6px 6px 12px ${color.grey[300]},
+      boxShadow = `6px 6px 12px #fae5ec,
         -12px -12px 24px -2px ${color.grey[100]}ff;`
       buttonPadding = spacing[4]
       buttonSize = 56
@@ -101,15 +101,15 @@ interface StyledButtonProps {
 
 const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
-  background-color: ${props => props.theme.color.grey[200]};
+  background-color: #2a2e3a;
   border: 0;
-  border-radius: 12px;
+  border-radius: 5px;
   box-shadow: ${props => props.boxShadow};
   color: ${props => !props.disabled ? props.color : `${props.color}55`};
   cursor: pointer;
   display: flex;
   font-size: ${props => props.fontSize}px;
-  font-weight: 700;
+  font-weight: 600;
   height: ${props => props.size}px;
   justify-content: center;
   outline: none;
@@ -117,8 +117,11 @@ const StyledButton = styled.button<StyledButtonProps>`
   padding-right: ${props => props.padding}px;
   pointer-events: ${props => !props.disabled ? undefined : 'none'};
   width: 100%;
+  transition: 0.3s ease;
+
   &:hover {
-    background-color: ${props => props.theme.color.grey[100]};
+    background-color: #fae5ec;
+    color: #2a2e3a;
   }
 `
 

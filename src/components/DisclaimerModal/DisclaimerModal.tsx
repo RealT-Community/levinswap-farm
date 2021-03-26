@@ -44,12 +44,12 @@ const DisclaimerModal: React.FC<DisclaimerModal> = ({
     } else {
       return (
         <div>
-          <p>Attention SUSHI Uniswap LPs</p>
+          <p>Attention LEVIN Levinswap LPs</p>
           <p>
-            The only Uniswap pool that is compatible with SUSHI is SUSHI/yCRV
+            The only Levinswap pool that is compatible with LEVIN is LEVIN/yCRV
             (Curve yPool tokens)
           </p>
-          <p>Providing liquidity for other Uniswap pools is dangerous</p>
+          <p>Providing liquidity for other Levinswap pools is dangerous</p>
           <p>You will LOSE your share of rebases</p>
         </div>
       )
@@ -62,7 +62,7 @@ const DisclaimerModal: React.FC<DisclaimerModal> = ({
         <Button
           text="Next"
           variant="secondary"
-          onClick={() => setStep('uniswap')}
+          onClick={() => setStep('levinswap')}
         />
       )
     } else {

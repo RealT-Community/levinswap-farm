@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'GT Haptik Regular';
+    src: url(./GT-Haptik-Regular.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'GT Haptik Medium';
+    src: url(./GT-Haptik-Medium.woff2) format('woff2');
+}

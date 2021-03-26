@@ -11,11 +11,11 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/farms">
         Menu
       </StyledLink>
-      <StyledLink exact activeClassName="active" to="/staking">
+      {/*<StyledLink exact activeClassName="active" to="/staking">
         Staking
-      </StyledLink>
+      </StyledLink>*/}
       <StyledAbsoluteLink
-        href="https://medium.com/sushiswap/the-sushiswap-project-c4049ea9941e"
+        href="https://wiki.levinswap.org/"
         target="_blank"
       >
         About
@@ -30,16 +30,18 @@ const StyledNav = styled.nav`
 `
 
 const StyledLink = styled(NavLink)`
-  color: ${(props) => props.theme.color.grey[400]};
+  color: #2a2e3a;
   font-weight: 700;
   padding-left: ${(props) => props.theme.spacing[3]}px;
   padding-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
+  transition: 0.3s ease;
+
   &:hover {
-    color: ${(props) => props.theme.color.grey[500]};
+    color: #a27395;
   }
   &.active {
-    color: ${(props) => props.theme.color.primary.main};
+    color: #a27395;
   }
   @media (max-width: 400px) {
     padding-left: ${(props) => props.theme.spacing[2]}px;
@@ -48,16 +50,18 @@ const StyledLink = styled(NavLink)`
 `
 
 const StyledAbsoluteLink = styled.a`
-  color: ${(props) => props.theme.color.grey[400]};
+  color: #2a2e3a;
   font-weight: 700;
   padding-left: ${(props) => props.theme.spacing[3]}px;
   padding-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
+  transition: 0.3s ease;
+  
   &:hover {
-    color: ${(props) => props.theme.color.grey[500]};
+    color: #a27395;
   }
   &.active {
-    color: ${(props) => props.theme.color.primary.main};
+    color: #a27395;
   }
   @media (max-width: 400px) {
     padding-left: ${(props) => props.theme.spacing[2]}px;

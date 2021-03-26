@@ -30,7 +30,7 @@ const TopBar: React.FC<TopBarProps> = ({ onPresentMobileMenu }) => {
 }
 
 const StyledLogoWrapper = styled.div`
-  width: 260px;
+  width: 151px;
   @media (max-width: 400px) {
     width: auto;
   }
@@ -41,8 +41,8 @@ const StyledTopBar = styled.div``
 const StyledTopBarInner = styled.div`
   align-items: center;
   display: flex;
-  height: ${(props) => props.theme.topBarSize}px;
   justify-content: space-between;
+  height: ${(props) => props.theme.topBarSize}px;
   max-width: ${(props) => props.theme.siteWidth}px;
   width: 100%;
 `

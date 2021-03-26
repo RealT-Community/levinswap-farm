@@ -31,10 +31,10 @@ export const addressMap = {
 
 export const contractAddresses = {
   sushi: {
-    100: '0xFe148DDbFA0AB7b099D2054138Bb96219e59875F',
+    100: '0x1698cD22278ef6E7c0DF45a8dEA72EDbeA9E42aa',
   },
   masterChef: {
-    100: '0x77A44dF6Fb2Be7D33f648C550Af949A9327B82d7',
+    100: '0x0f2B0e9DB46C6b538e9276D2cF0C6CE8d515Eca1',
   },
   weth: {
     100: '0xe91d153e0b41518a2ce8dd3d7944fa863463a97d',
@@ -56,60 +56,47 @@ UNI-V2 LP Address on mainnet for reference
 9  BAND 0xf421c3f2e695c2d4c0765379ccace8ade4a480d9
 10 AMPL 0xc5be99a02c6857f9eac67bbce58df5572498f40c
 11 YFI  0x2fdbadf3c4d5a8666bc06645b8358ab803996e28
-12 SUSHI 0xce84867c3c02b05dc570d0135103d3fb9cc19433
+12 LEVIN 0xce84867c3c02b05dc570d0135103d3fb9cc19433
 */
 
 export const supportedPools = [
-  // {
-  //   pid: 0,
-  //   lpAddresses: {
-  //     100: '0x90AAef6443942730fBAe414961735Af9C8568Cfb',
-  //   },
-  //   tokenAddresses: {
-  //     100: '0x90AAef6443942730fBAe414961735Af9C8568Cfb',
-  //   },
-  //   name: 'Aave Token from Ethereum',
-  //   symbol: 'LPTA-AAVE-WXDAI UNI-V2 LP',
-  //   tokenSymbol: 'LPTA-AAVE',
-  //   icon: '🍣',
-  // },
   {
     pid: 0,
+    lpAddresses: {
+      100: '0x4eeb519888b027b50d3d221abdb47d9072e2e838', // pool address
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa', // token address
+    },
+    name: 'LEVIN',
+    symbol: 'LEVIN-WXDAI LP',
+    tokenSymbol: 'LEVIN',
+    icon: '⚡',
+  },
+  {
+    pid: 1,
     lpAddresses: {
       100: '0x75e75647cb13c168901a5923d8e3f69c14274a58',
     },
     tokenAddresses: {
       100: '0xb7d311e2eb55f2f68a9440da38e7989210b9a05e',
     },
-    name: 'STAKE Token from Ethereum',
-    symbol: 'STAKE-WXDAI UNI-V2 LP',
+    name: 'STAKE',
+    symbol: 'STAKE-WXDAI LP',
     tokenSymbol: 'STAKE',
-    icon: '🍣',
-  }, 
-  // {
-  //   pid: 2,
-  //   lpAddresses: {
-  //     100: '0xe2eC0F6A6a664cd00B0c51A3db529E1c8a69a620',
-  //   },
-  //   tokenAddresses: {
-  //     100: '0xe2eC0F6A6a664cd00B0c51A3db529E1c8a69a620',
-  //   },
-  //   name: 'LP_Test_C',
-  //   symbol: 'LPTC',
-  //   tokenSymbol: 'LPTC',
-  //   icon: '🍣',
-  // }, {
-  //   pid: 3,
-  //   lpAddresses: {
-  //     100: '0xc13721582de2D5b75B4B12e77f8688eA07Fd468A',
-  //   },
-  //   tokenAddresses: {
-  //     100: '0xc13721582de2D5b75B4B12e77f8688eA07Fd468A',
-  //   },
-  //   name: 'LP_Test_D',
-  //   symbol: 'LPTD',
-  //   tokenSymbol: 'LPTD',
-  //   icon: '🍣',
-  // },
-
+    icon: '⚡',
+  },
+  {
+    pid: 2,
+    lpAddresses: {
+      100: '0x40a24eca4bbc224acde928230d14cd729f81f3cf',
+    },
+    tokenAddresses: {
+      100: '0xda47bd33e8f5d17bb81b8752784bfb46c1c44b2a',
+    },
+    name: 'REALT',
+    symbol: 'REALT-LEVIN LP',
+    tokenSymbol: 'REALT',
+    icon: '⚡',
+  },
 ]
