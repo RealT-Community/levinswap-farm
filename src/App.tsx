@@ -55,7 +55,7 @@ const Providers: React.FC = ({ children }) => {
       <UseWalletProvider
         chainId={100}
         connectors={{
-          walletconnect: { rpcUrl: 'https://xdai.poa.network/' },
+          walletconnect: { rpcUrl: 'https://rpc.xdaichain.com/' },
         }}
       >
         <SushiProvider>
