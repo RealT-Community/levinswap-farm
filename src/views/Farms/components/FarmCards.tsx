@@ -1,4 +1,5 @@
 import BigNumber from 'bignumber.js'
+import { timeStamp } from 'node:console'
 import React, { useEffect, useState } from 'react'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import styled, { keyframes } from 'styled-components'
@@ -36,8 +37,8 @@ const FarmCards: React.FC = () => {
       ? stakedValue[sushiIndex].tokenPriceInWeth
       : new BigNumber(0)
 
-  const BLOCKS_PER_YEAR = new BigNumber(2336000)
-  const LEVIN_PER_BLOCK = new BigNumber(1000)
+  const BLOCKS_PER_YEAR = new BigNumber(63113904)
+  const LEVIN_PER_BLOCK = new BigNumber(0.0608)
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
