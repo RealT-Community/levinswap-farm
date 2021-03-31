@@ -94,9 +94,9 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0xda47bd33e8f5d17bb81b8752784bfb46c1c44b2a',
     },
-    name: 'REALT',
-    symbol: 'REALT-LEVIN LP',
-    tokenSymbol: 'REALT',
+    name: 'RealToken S 15350',
+    symbol: 'RealT S 15350-LEVIN LP',
+    tokenSymbol: 'REALTOKEN-S-15350-GREYDALE-ST-DETROIT-MI',
     icon: '⚡',
   },
 ]

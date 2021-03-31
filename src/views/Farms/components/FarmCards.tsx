@@ -153,7 +153,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
               )}
             </Button>
             <StyledInsight>
-              <span>APY</span>
+              <span>Total APY</span>
               <span>
                 {farm.apy
                   ? `${farm.apy
