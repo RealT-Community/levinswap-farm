@@ -115,7 +115,7 @@ const Balances: React.FC = () => {
         <CardContent>
           <Label text="Total LEVIN Supply" />
           <Value
-            value={totalSupply ? getBalanceNumber(totalSupply) : 'Locked'}
+            value={totalSupply ? getBalanceNumber(totalSupply) - 3575000 : 'Locked'}
           />
         </CardContent>
         <Footnote>
