@@ -37,8 +37,8 @@ const FarmCards: React.FC = () => {
       ? stakedValue[sushiIndex].tokenPriceInWeth
       : new BigNumber(0)
 
-  const BLOCKS_PER_YEAR = new BigNumber(63113904)
-  const LEVIN_PER_BLOCK = new BigNumber(0.0608)
+  const BLOCKS_PER_YEAR = new BigNumber(6307200)
+  const LEVIN_PER_BLOCK = new BigNumber(0.05)
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
