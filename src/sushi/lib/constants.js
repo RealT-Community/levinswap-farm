@@ -68,7 +68,7 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa', // token address
     },
-    name: 'LEVIN',
+    name: 'LEVIN/WXDAI',
     symbol: 'LEVIN-WXDAI LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
@@ -81,9 +81,48 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0xb7d311e2eb55f2f68a9440da38e7989210b9a05e',
     },
-    name: 'STAKE',
+    name: 'STAKE/WXDAI',
     symbol: 'STAKE-WXDAI LP',
     tokenSymbol: 'STAKE',
+    icon: '⚡',
+  },
+  {
+    pid: 3,
+    lpAddresses: {
+      100: '0xf711393ceae2a7343297558f41adac96107c28b7',
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
+    },
+    name: 'LEVIN/STAKE',
+    symbol: 'LEVIN-STAKE LP',
+    tokenSymbol: 'LEVIN',
+    icon: '⚡',
+  },
+  {
+    pid: 4,
+    lpAddresses: {
+      100: '0x287a653a41a67018ee97442c820bcdf40d114da2',
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
+    },
+    name: 'REALT 19596/LEVIN',
+    symbol: 'REALT-19596-LEVIN LP',
+    tokenSymbol: 'REALT s 19596',
+    icon: '⚡',
+  },
+  {
+    pid: 5,
+    lpAddresses: {
+      100: '0x98042ec99c9a6f28ee8e95a9c2bbc62ddcbe7884',
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
+    },
+    name: 'REALT 5601/LEVIN',
+    symbol: 'REALT 5601-LEVIN LP',
+    tokenSymbol: 'REALT S 5601',
     icon: '⚡',
   },
   {
@@ -94,7 +133,7 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0xda47bd33e8f5d17bb81b8752784bfb46c1c44b2a',
     },
-    name: 'RealToken S 15350',
+    name: 'RealT 15350 (Ended)',
     symbol: 'RealT S 15350-LEVIN LP',
     tokenSymbol: 'REALTOKEN-S-15350-GREYDALE-ST-DETROIT-MI',
     icon: '⚡',
