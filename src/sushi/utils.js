@@ -22,6 +22,9 @@ export const getSushiAddress = (sushi) => {
 export const getWethContract = (sushi) => {
   return sushi && sushi.contracts && sushi.contracts.weth
 }
+export const getLevinContract = (sushi) => {
+  return sushi && sushi.contracts && sushi.contracts.levin
+}
 
 export const getMasterChefContract = (sushi) => {
   return sushi && sushi.contracts && sushi.contracts.masterChef
@@ -111,6 +114,49 @@ export const getTotalLPWethValue = async (
     tokenAmount,
     wethAmount,
     totalWethValue: totalLpWethValue.div(new BigNumber(10).pow(18)),
+    tokenPriceInWeth: wethAmount.div(tokenAmount),
+    poolWeight: await getPoolWeight(masterChefContract, pid),
+  }
+}
+
+export const getTotalLPLevinValue = async (
+  masterChefContract,
+  wethContract,
+  lpContract,
+  tokenContract,
+  pid,
+) => {
+  // Get balance of the token address
+  const tokenAmountWholeLP = await tokenContract.methods
+    .balanceOf(lpContract.options.address)
+    .call()
+  const tokenDecimals = await tokenContract.methods.decimals().call()
+  // Get the share of lpContract that masterChefContract owns
+  const balance = await lpContract.methods
+    .balanceOf(masterChefContract.options.address)
+    .call()
+  // Convert that into the portion of total lpContract = p1
+  const totalSupply = await lpContract.methods.totalSupply().call()
+  // Get total weth value for the lpContract = w1
+  const lpContractWeth = await wethContract.methods
+    .balanceOf(lpContract.options.address)
+    .call()
+  // Return p1 * w1 * 2
+  const portionLp = new BigNumber(balance).div(new BigNumber(totalSupply))
+  const lpWethWorth = new BigNumber(lpContractWeth)
+  const totalLpWethValue = portionLp.times(lpWethWorth).times(new BigNumber(2))
+  // Calculate
+  const tokenAmount = new BigNumber(tokenAmountWholeLP)
+    .times(portionLp)
+    .div(new BigNumber(10).pow(tokenDecimals))
+
+  const wethAmount = new BigNumber(lpContractWeth)
+    .times(portionLp)
+    .div(new BigNumber(10).pow(18))
+  return {
+    tokenAmount,
+    wethAmount,
+    totalLevinValue: totalLpWethValue.div(new BigNumber(10).pow(18)),
     tokenPriceInWeth: wethAmount.div(tokenAmount),
     poolWeight: await getPoolWeight(masterChefContract, pid),
   }

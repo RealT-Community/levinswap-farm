@@ -14,6 +14,7 @@ import { Farm } from '../../../contexts/Farms'
 import useAllStakedValue, {
   StakedValue,
 } from '../../../hooks/useAllStakedValue'
+import useAllStakedValueLevin from '../../../hooks/useAllStakedValueLevin'
 import useFarms from '../../../hooks/useFarms'
 import useSushi from '../../../hooks/useSushi'
 import { getEarned, getMasterChefContract } from '../../../sushi/utils'
@@ -27,6 +28,8 @@ const FarmCards: React.FC = () => {
   const [farms] = useFarms()
   const { account } = useWallet()
   const stakedValue = useAllStakedValue()
+  const stakedValueLevin = useAllStakedValueLevin()
+
 
   const sushiIndex = farms.findIndex(
     ({ tokenSymbol }) => tokenSymbol === 'LEVIN',
@@ -37,21 +40,35 @@ const FarmCards: React.FC = () => {
       ? stakedValue[sushiIndex].tokenPriceInWeth
       : new BigNumber(0)
 
+  const sushiPriceLevin =
+    sushiIndex >= 0 && stakedValueLevin[sushiIndex]
+      ? stakedValueLevin[sushiIndex].tokenPriceInWeth
+      : new BigNumber(0)
+
   const BLOCKS_PER_YEAR = new BigNumber(6307200)
   const LEVIN_PER_BLOCK = new BigNumber(0.05)
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
+
       const farmWithStakedValue = {
         ...farm,
         ...stakedValue[i],
-        apy: stakedValue[i]
-          ? sushiPrice
-            .times(LEVIN_PER_BLOCK)
-            .times(BLOCKS_PER_YEAR)
-            .times(stakedValue[i].poolWeight)
-            .div(stakedValue[i].totalWethValue)
-          : null,
+        apy: farm.id.includes('WXDAI')
+          ? stakedValue[i]
+            ? sushiPrice
+              .times(LEVIN_PER_BLOCK)
+              .times(BLOCKS_PER_YEAR)
+              .times(stakedValue[i].poolWeight)
+              .div(stakedValue[i].totalWethValue)
+            : null
+          : stakedValueLevin[i]
+            ? sushiPriceLevin
+              .times(LEVIN_PER_BLOCK)
+              .times(BLOCKS_PER_YEAR)
+              .times(stakedValueLevin[i].poolWeight)
+              .div(stakedValueLevin[i].totalWethValue)
+            : null,
       }
       const newFarmRows = [...farmRows]
       if (newFarmRows[newFarmRows.length - 1].length === 3) {

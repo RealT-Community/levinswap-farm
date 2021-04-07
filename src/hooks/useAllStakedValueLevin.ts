@@ -7,7 +7,7 @@ import { Contract } from 'web3-eth-contract'
 
 import {
   getMasterChefContract,
-  getWethContract,
+  getLevinContract,
   getFarms,
   getTotalLPWethValue,
 } from '../sushi/utils'
@@ -22,13 +22,13 @@ export interface StakedValue {
   poolWeight: BigNumber
 }
 
-const useAllStakedValue = () => {
+const useAllStakedValueLevin = () => {
   const [balances, setBalance] = useState([] as Array<StakedValue>)
   const { account }: { account: string; ethereum: provider } = useWallet()
   const sushi = useSushi()
   const farms = getFarms(sushi)
   const masterChefContract = getMasterChefContract(sushi)
-  const wethContact = getWethContract(sushi)
+  const levinContact = getLevinContract(sushi)
   const block = useBlock()
 
   const fetchAllStakedValue = useCallback(async () => {
@@ -45,7 +45,7 @@ const useAllStakedValue = () => {
         }) =>
           getTotalLPWethValue(
             masterChefContract,
-            wethContact,
+            levinContact,
             lpContract,
             tokenContract,
             pid,
@@ -54,7 +54,7 @@ const useAllStakedValue = () => {
     )
 
     setBalance(balances)
-  }, [farms, masterChefContract, wethContact])
+  }, [farms, masterChefContract, levinContact])
 
   useEffect(() => {
     if (account && masterChefContract && sushi) {
@@ -65,4 +65,4 @@ const useAllStakedValue = () => {
   return balances
 }
 
-export default useAllStakedValue
+export default useAllStakedValueLevin
