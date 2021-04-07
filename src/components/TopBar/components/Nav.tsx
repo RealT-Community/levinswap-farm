@@ -15,10 +15,10 @@ const Nav: React.FC = () => {
         Staking
       </StyledLink>*/}
       <StyledAbsoluteLink
-        href="https://wiki.levinswap.org/"
+        href="https://app.levinswap.org/"
         target="_blank"
       >
-        About
+        Swap
       </StyledAbsoluteLink>
     </StyledNav>
   )
