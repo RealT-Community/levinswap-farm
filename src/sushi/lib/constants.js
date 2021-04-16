@@ -103,19 +103,6 @@ export const supportedPools = [
     icon: '⚡',
   },
   {
-    pid: 3,
-    lpAddresses: {
-      100: '0xf711393ceae2a7343297558f41adac96107c28b7',
-    },
-    tokenAddresses: {
-      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
-    },
-    name: 'LEVIN/STAKE',
-    symbol: 'LEVIN-STAKE LP',
-    tokenSymbol: 'LEVIN',
-    icon: '⚡',
-  },
-  {
     pid: 8,
     lpAddresses: {
       100: '0xde9a79f84b3ecdb6ffe08187e4fd8fcff23e4104',
@@ -129,7 +116,7 @@ export const supportedPools = [
     icon: '⚡',
   },
   {
-    pid: 9,
+    pid: 12,
     lpAddresses: {
       100: '0x8773f4bc44382b32a43623dad7a3b4849169da6f',
     },
