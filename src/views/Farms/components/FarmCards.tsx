@@ -146,7 +146,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 
   return (
     <StyledCardWrapper>
-      {farm.tokenSymbol === 'LEVIN' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'LEVIN'}
       <Card>
         <CardContent>
           <StyledContent>

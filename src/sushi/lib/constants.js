@@ -103,6 +103,46 @@ export const supportedPools = [
     icon: '⚡',
   },
   {
+    pid: 9,
+    lpAddresses: {
+      100: '0x2c3d85e260ca8637467991fc474c5a76c39d1470',
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
+    },
+    name: 'USDC/LEVIN',
+    symbol: 'USDC/LEVIN LP',
+    tokenSymbol: 'USDC',
+    icon: '⚡',
+  },
+  {
+    pid: 10,
+    lpAddresses: {
+      100: '0x4a1b8b79842a3832e5f458ffbebc43fca44e15cd',
+    },
+    tokenAddresses: {
+      100: '0x2adc1cfa726a45264a328d9d2e2c692ceac97458',
+    },
+    name: 'LEVIN/REALT-14494',
+    symbol: 'LEVIN/REALT-14494 LP',
+    tokenSymbol: 'LEVIN',
+    icon: '⚡',
+  },
+  {
+    pid: 11,
+    lpAddresses: {
+      100: '0x75afd656f22b3a9584dafc23b89aafe94fdcbc57',
+    },
+    tokenAddresses: {
+      100: '0x280e9ed3b20c580a2f4219657bb9332d80bc01f1',
+    },
+    name: 'LEVIN/REALT-19020',
+    symbol: 'LEVIN/REALT-19020 LP',
+    tokenSymbol: 'LEVIN',
+    icon: '⚡',
+  },
+
+  {
     pid: 4,
     lpAddresses: {
       100: '0x287a653a41a67018ee97442c820bcdf40d114da2',
@@ -110,7 +150,7 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'REALT 19596/LEVIN',
+    name: 'REALT 19596 (Ended)',
     symbol: 'REALT-19596-LEVIN LP',
     tokenSymbol: 'REALT s 19596',
     icon: '⚡',
@@ -123,7 +163,7 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'REALT 5601/LEVIN',
+    name: 'REALT 5601 (Ended)',
     symbol: 'REALT 5601-LEVIN LP',
     tokenSymbol: 'REALT S 5601',
     icon: '⚡',
