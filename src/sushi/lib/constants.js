@@ -77,16 +77,16 @@ export const supportedPools = [
     icon: '⚡',
   },
   {
-    pid: 1,
+    pid: 12,
     lpAddresses: {
-      100: '0x75e75647cb13c168901a5923d8e3f69c14274a58',
+      100: '0x8773f4bc44382b32a43623dad7a3b4849169da6f',
     },
     tokenAddresses: {
-      100: '0xb7d311e2eb55f2f68a9440da38e7989210b9a05e',
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'STAKE/WXDAI',
-    symbol: 'STAKE-WXDAI LP',
-    tokenSymbol: 'STAKE',
+    name: 'LEVIN/USDC',
+    symbol: 'LEVIN-USDC LP',
+    tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
   {
@@ -116,15 +116,41 @@ export const supportedPools = [
     icon: '⚡',
   },
   {
-    pid: 12,
+    pid: 1,
     lpAddresses: {
-      100: '0x8773f4bc44382b32a43623dad7a3b4849169da6f',
+      100: '0x75e75647cb13c168901a5923d8e3f69c14274a58',
+    },
+    tokenAddresses: {
+      100: '0xb7d311e2eb55f2f68a9440da38e7989210b9a05e',
+    },
+    name: 'STAKE/WXDAI',
+    symbol: 'STAKE-WXDAI LP',
+    tokenSymbol: 'STAKE',
+    icon: '⚡',
+  },
+  {
+    pid: 13,
+    lpAddresses: {
+      100: '0x70ee52348edc032a3b111edcbf529680133f4b4a',
     },
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'LEVIN/USDC',
-    symbol: 'LEVIN-USDC LP',
+    name: 'LEVIN/REALT 10639',
+    symbol: 'LEVIN-REALT 10639 LP',
+    tokenSymbol: 'LEVIN',
+    icon: '⚡',
+  },
+  {
+    pid: 14,
+    lpAddresses: {
+      100: '0xe7c240012be8dd57d73a4542a76b9a7e78a5f009',
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
+    },
+    name: 'LEVIN/REALT 15753',
+    symbol: 'LEVIN-REALT 15753 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
@@ -136,7 +162,7 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'LEVIN/REALT-14494',
+    name: 'REALT 14494 (Ended)',
     symbol: 'LEVIN-REALT-14494 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
@@ -149,7 +175,7 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'LEVIN/REALT-19020',
+    name: 'REALT 19020 (Ended)',
     symbol: 'LEVIN-REALT-19020 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',

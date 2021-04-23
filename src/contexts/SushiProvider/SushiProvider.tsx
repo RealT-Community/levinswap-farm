@@ -36,7 +36,7 @@ const SushiProvider: React.FC = ({ children }) => {
         autoGasMultiplier: 1.5,
         testing: false,
         defaultGas: '6000000',
-        defaultGasPrice: '1000000000000',
+        defaultGasPrice: '450000',
         accounts: [],
         ethereumNodeTimeout: 10000,
       })

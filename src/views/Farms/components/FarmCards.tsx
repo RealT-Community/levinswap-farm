@@ -48,13 +48,15 @@ const FarmCards: React.FC = () => {
   const BLOCKS_PER_YEAR = new BigNumber(6307200)
   const LEVIN_PER_BLOCK = new BigNumber(0.05)
 
+  const xdai = "WXDAI"
+
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
 
       const farmWithStakedValue = {
         ...farm,
         ...stakedValue[i],
-        apy: farm.id.includes('WXDAI')
+        apy: farm.id.includes(xdai)
           ? stakedValue[i]
             ? sushiPrice
               .times(LEVIN_PER_BLOCK)
