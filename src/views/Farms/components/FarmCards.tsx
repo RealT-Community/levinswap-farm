@@ -1,5 +1,4 @@
 import BigNumber from 'bignumber.js'
-import { timeStamp } from 'node:console'
 import React, { useEffect, useState } from 'react'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import styled, { keyframes } from 'styled-components'
@@ -14,10 +13,9 @@ import { Farm } from '../../../contexts/Farms'
 import useAllStakedValue, {
   StakedValue,
 } from '../../../hooks/useAllStakedValue'
-import useAllStakedValueLevin from '../../../hooks/useAllStakedValueLevin'
 import useFarms from '../../../hooks/useFarms'
 import useSushi from '../../../hooks/useSushi'
-import { getEarned, getMasterChefContract } from '../../../sushi/utils'
+import { getEarned, getMasterChefContract,isWeth } from '../../../sushi/utils'
 import { bnToDec } from '../../../utils'
 
 interface FarmWithStakedValue extends Farm, StakedValue {
@@ -26,51 +24,42 @@ interface FarmWithStakedValue extends Farm, StakedValue {
 
 const FarmCards: React.FC = () => {
   const [farms] = useFarms()
-  const { account } = useWallet()
   const stakedValue = useAllStakedValue()
-  const stakedValueLevin = useAllStakedValueLevin()
+  
+  // Not used
+  // const { account } = useWallet()
 
-
-  const sushiIndex = farms.findIndex(
-    ({ tokenSymbol }) => tokenSymbol === 'LEVIN',
+  const sushiIndexWeth = farms.findIndex(
+    ({ tokenSymbol, id }) => tokenSymbol === 'LEVIN' && isWeth(id),
   )
 
-  const sushiPrice =
-    sushiIndex >= 0 && stakedValue[sushiIndex]
-      ? stakedValue[sushiIndex].tokenPriceInWeth
-      : new BigNumber(0)
+  const sushiIndexLevin = farms.findIndex(
+    ({ tokenSymbol, id }) => tokenSymbol === 'LEVIN' && !isWeth(id),
+  )
 
-  const sushiPriceLevin =
-    sushiIndex >= 0 && stakedValueLevin[sushiIndex]
-      ? stakedValueLevin[sushiIndex].tokenPriceInWeth
-      : new BigNumber(0)
+  const getSushiPrice = (id: string) => {
+    const sushiIndex = isWeth(id) ? sushiIndexWeth : sushiIndexLevin
+    return sushiIndex >= 0 && stakedValue[sushiIndex]
+    ? stakedValue[sushiIndex].tokenPriceInWeth
+    : new BigNumber(0)
+  }
 
   const BLOCKS_PER_YEAR = new BigNumber(6307200)
   const LEVIN_PER_BLOCK = new BigNumber(0.05)
 
-  const xdai = "WXDAI"
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
-
       const farmWithStakedValue = {
         ...farm,
         ...stakedValue[i],
-        apy: farm.id.includes(xdai)
-          ? stakedValue[i]
-            ? sushiPrice
-              .times(LEVIN_PER_BLOCK)
-              .times(BLOCKS_PER_YEAR)
-              .times(stakedValue[i].poolWeight)
-              .div(stakedValue[i].totalWethValue)
-            : null
-          : stakedValueLevin[i]
-            ? sushiPriceLevin
-              .times(LEVIN_PER_BLOCK)
-              .times(BLOCKS_PER_YEAR)
-              .times(stakedValueLevin[i].poolWeight)
-              .div(stakedValueLevin[i].totalWethValue)
-            : null,
+        apy: stakedValue[i]
+          ? getSushiPrice(farm.id)
+            .times(LEVIN_PER_BLOCK)
+            .times(BLOCKS_PER_YEAR)
+            .times(stakedValue[i].poolWeight)
+            .div(stakedValue[i].totalWethValue)
+          : null
       }
       const newFarmRows = [...farmRows]
       if (newFarmRows[newFarmRows.length - 1].length === 3) {

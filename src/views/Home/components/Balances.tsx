@@ -43,7 +43,7 @@ const PendingRewards: React.FC = () => {
   useEffect(() => {
     setStart(end)
     setEnd(sumEarning)
-  }, [sumEarning])
+  }, [end, sumEarning])
 
   return (
     <span
