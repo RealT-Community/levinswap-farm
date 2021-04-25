@@ -33,6 +33,8 @@ export const getSushiContract = (sushi) => {
   return sushi && sushi.contracts && sushi.contracts.sushi
 }
 
+export const isWeth = (id) => id.includes("WXDAI")
+
 export const getFarms = (sushi) => {
   return sushi
     ? sushi.contracts.pools.map(

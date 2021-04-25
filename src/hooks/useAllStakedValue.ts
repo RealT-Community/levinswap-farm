@@ -11,6 +11,7 @@ import {
   getLevinContract,
   getFarms,
   getTotalLPWethValue,
+  isWeth,
 } from '../sushi/utils'
 import useSushi from './useSushi'
 import useBlock from './useBlock'
@@ -47,7 +48,7 @@ const useAllStakedValue = () => {
           lpContract: Contract
           tokenContract: Contract
         }) => {
-          const selectedContract = id.includes("WXDAI") 
+          const selectedContract = isWeth(id)
             ? wethContact
             : levinContact            
 

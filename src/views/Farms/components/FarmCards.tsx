@@ -15,7 +15,7 @@ import useAllStakedValue, {
 } from '../../../hooks/useAllStakedValue'
 import useFarms from '../../../hooks/useFarms'
 import useSushi from '../../../hooks/useSushi'
-import { getEarned, getMasterChefContract } from '../../../sushi/utils'
+import { getEarned, getMasterChefContract,isWeth } from '../../../sushi/utils'
 import { bnToDec } from '../../../utils'
 
 interface FarmWithStakedValue extends Farm, StakedValue {
@@ -29,14 +29,20 @@ const FarmCards: React.FC = () => {
   // Not used
   // const { account } = useWallet()
 
-  const sushiIndex = farms.findIndex(
-    ({ tokenSymbol }) => tokenSymbol === 'LEVIN',
+  const sushiIndexWeth = farms.findIndex(
+    ({ tokenSymbol, id }) => tokenSymbol === 'LEVIN' && isWeth(id),
   )
 
-  const sushiPrice =
-    sushiIndex >= 0 && stakedValue[sushiIndex]
-      ? stakedValue[sushiIndex].tokenPriceInWeth
-      : new BigNumber(0)
+  const sushiIndexLevin = farms.findIndex(
+    ({ tokenSymbol, id }) => tokenSymbol === 'LEVIN' && !isWeth(id),
+  )
+
+  const getSushiPrice = (id: string) => {
+    const sushiIndex = isWeth(id) ? sushiIndexWeth : sushiIndexLevin
+    return sushiIndex >= 0 && stakedValue[sushiIndex]
+    ? stakedValue[sushiIndex].tokenPriceInWeth
+    : new BigNumber(0)
+  }
 
   const BLOCKS_PER_YEAR = new BigNumber(6307200)
   const LEVIN_PER_BLOCK = new BigNumber(0.05)
@@ -48,7 +54,7 @@ const FarmCards: React.FC = () => {
         ...farm,
         ...stakedValue[i],
         apy: stakedValue[i]
-          ? sushiPrice
+          ? getSushiPrice(farm.id)
             .times(LEVIN_PER_BLOCK)
             .times(BLOCKS_PER_YEAR)
             .times(stakedValue[i].poolWeight)
