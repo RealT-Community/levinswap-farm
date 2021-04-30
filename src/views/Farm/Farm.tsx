@@ -9,7 +9,7 @@ import useFarm from '../../hooks/useFarm'
 import useRedeem from '../../hooks/useRedeem'
 import useSushi from '../../hooks/useSushi'
 import { getMasterChefContract } from '../../sushi/utils'
-import { getContract } from '../../utils/erc20'
+import { getContract, getBalance } from '../../utils/erc20'
 import Harvest from './components/Harvest'
 import Stake from './components/Stake'
 
@@ -80,10 +80,40 @@ const Farm: React.FC = () => {
           automagically harvest LEVIN rewards for you!
         </StyledInfo>
         <Spacer size="lg" />
+        <StyledCalculator>
+          Your LP token value (in USD)
+          <StyledCalculation>
+          </StyledCalculation>
+        </StyledCalculator>
       </StyledFarm>
     </>
   )
 }
+
+const StyledCalculation = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  width: 200px;
+  height: 100px;
+  color: #fff;
+  background: #2a2e3a;
+  border-radius: 5px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+const StyledCalculator = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
 
 const StyledFarm = styled.div`
   align-items: center;
