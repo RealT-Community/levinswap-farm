@@ -80,11 +80,6 @@ const Farm: React.FC = () => {
           automagically harvest LEVIN rewards for you!
         </StyledInfo>
         <Spacer size="lg" />
-        <StyledCalculator>
-          Your LP token value (in USD)
-          <StyledCalculation>
-          </StyledCalculation>
-        </StyledCalculator>
       </StyledFarm>
     </>
   )
