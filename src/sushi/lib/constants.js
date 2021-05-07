@@ -155,15 +155,15 @@ export const supportedPools = [
     icon: '⚡',
   },
   {
-    pid: 19,
+    pid: 20,
     lpAddresses: {
-      100: '0xac2563b4d19ae0018207424f524a5d8539b6c228',
+      100: '0x6d14dc1e49e47b1dfea5b9e55143e1c1d0c4afb7',
     },
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'LEVIN/RealT 402',
-    symbol: 'LEVIN-REALT 402 LP',
+    name: 'LEVIN/RealT 14882',
+    symbol: 'LEVIN-REALT 14882 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
