@@ -129,41 +129,28 @@ export const supportedPools = [
     icon: '⚡',
   },
   {
-    pid: 17,
+    pid: 21,
     lpAddresses: {
-      100: '0xf2578329d269730b13743d5cf775bb1cfaa49351',
+      100: '0x5a4c6150d0281e68bfd77d372081832102db1a71',
     },
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'LEVIN/XMOON',
-    symbol: 'LEVIN-XMOON LP',
+    name: 'LEVIN/REALT 1542',
+    symbol: 'LEVIN-REALT 1542 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
   {
-    pid: 18,
+    pid: 22,
     lpAddresses: {
-      100: '0xb9862f1d8358b5f65153da75875ddd452bc9876e',
+      100: '0xc3d5c88f947d8c3c82437ce9c9a9c3768270f762',
     },
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'LEVIN/REALT 14918',
-    symbol: 'LEVIN-REALT 14918 LP',
-    tokenSymbol: 'LEVIN',
-    icon: '⚡',
-  },
-  {
-    pid: 20,
-    lpAddresses: {
-      100: '0x6d14dc1e49e47b1dfea5b9e55143e1c1d0c4afb7',
-    },
-    tokenAddresses: {
-      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
-    },
-    name: 'LEVIN/RealT 14882',
-    symbol: 'LEVIN-REALT 14882 LP',
+    name: 'LEVIN/REALT 10617',
+    symbol: 'LEVIN-REALT 10617 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
@@ -309,6 +296,45 @@ export const supportedPools = [
     name: 'RealT 15350 (Ended)',
     symbol: 'RealT S 15350-LEVIN LP',
     tokenSymbol: 'REALTOKEN-S-15350-GREYDALE-ST-DETROIT-MI',
+    icon: '⚡',
+  },
+  {
+    pid: 17,
+    lpAddresses: {
+      100: '0xf2578329d269730b13743d5cf775bb1cfaa49351',
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
+    },
+    name: 'LEVIN/XMOON',
+    symbol: 'LEVIN-XMOON LP',
+    tokenSymbol: 'LEVIN',
+    icon: '⚡',
+  },
+  {
+    pid: 18,
+    lpAddresses: {
+      100: '0xb9862f1d8358b5f65153da75875ddd452bc9876e',
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
+    },
+    name: 'REALT 14918 (Ended)',
+    symbol: 'REALT 14918 LP',
+    tokenSymbol: 'LEVIN',
+    icon: '⚡',
+  },
+  {
+    pid: 20,
+    lpAddresses: {
+      100: '0x6d14dc1e49e47b1dfea5b9e55143e1c1d0c4afb7',
+    },
+    tokenAddresses: {
+      100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
+    },
+    name: 'RealT 14882 (Ended)',
+    symbol: 'REALT 14882 LP',
+    tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
 ]
