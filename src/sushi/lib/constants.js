@@ -137,7 +137,7 @@ export const supportedPools = [
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
     name: 'LEVIN/REALT 13606',
-    symbol: 'LEVIN/REALT 13606 LP',
+    symbol: 'LEVIN-REALT 13606 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
@@ -150,11 +150,11 @@ export const supportedPools = [
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
     name: 'LEVIN/REALT 12409',
-    symbol: 'LEVIN/REALT 12409 LP',
+    symbol: 'LEVIN-REALT 12409 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
-  // new inactive pools
+  // Inactive Pools
   {
     pid: 23,
     lpAddresses: {
@@ -181,7 +181,6 @@ export const supportedPools = [
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
-  // Inactive Pools
   {
     pid: 21,
     lpAddresses: {
