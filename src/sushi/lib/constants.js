@@ -128,6 +128,7 @@ export const supportedPools = [
     tokenSymbol: 'STAKE',
     icon: '⚡',
   },
+  // Inactive Pools
   {
     pid: 25,
     lpAddresses: {
@@ -136,8 +137,8 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'LEVIN/REALT 13606',
-    symbol: 'LEVIN-REALT 13606 LP',
+    name: 'REALT 13606 (Ended)',
+    symbol: 'REALT 13606 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
@@ -149,12 +150,11 @@ export const supportedPools = [
     tokenAddresses: {
       100: '0x1698cd22278ef6e7c0df45a8dea72edbea9e42aa',
     },
-    name: 'LEVIN/REALT 12409',
-    symbol: 'LEVIN-REALT 12409 LP',
+    name: 'REALT 12409 (Ended)',
+    symbol: 'REALT 12409 LP',
     tokenSymbol: 'LEVIN',
     icon: '⚡',
   },
-  // Inactive Pools
   {
     pid: 23,
     lpAddresses: {
