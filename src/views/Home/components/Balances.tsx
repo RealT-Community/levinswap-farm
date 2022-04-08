@@ -115,12 +115,12 @@ const Balances: React.FC = () => {
         <CardContent>
           <Label text="Total LEVIN Supply" />
           <Value
-            value={totalSupply ? getBalanceNumber(totalSupply) - 3575000 : 'Locked'}
+            value={totalSupply ? getBalanceNumber(totalSupply) - 6575000 : 'Locked'}
           />
         </CardContent>
         <Footnote>
           New rewards per block
-          <FootnoteValue>0.04 LEVIN</FootnoteValue>
+          <FootnoteValue>0.02 LEVIN</FootnoteValue>
         </Footnote>
       </Card>
     </StyledWrapper>

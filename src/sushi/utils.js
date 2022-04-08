@@ -25,7 +25,6 @@ export const getWethContract = (sushi) => {
 export const getLevinContract = (sushi) => {
   return sushi && sushi.contracts && sushi.contracts.levin
 }
-
 export const getMasterChefContract = (sushi) => {
   return sushi && sushi.contracts && sushi.contracts.masterChef
 }
