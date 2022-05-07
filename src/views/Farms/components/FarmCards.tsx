@@ -19,7 +19,8 @@ import { getEarned, getMasterChefContract,isWeth } from '../../../sushi/utils'
 import { bnToDec } from '../../../utils'
 
 interface FarmWithStakedValue extends Farm, StakedValue {
-  apy: BigNumber
+  apy: BigNumber,
+  active: boolean
 }
 
 const FarmCards: React.FC = () => {
@@ -45,7 +46,7 @@ const FarmCards: React.FC = () => {
   }
 
   const BLOCKS_PER_YEAR = new BigNumber(6307200)
-  const LEVIN_PER_BLOCK = new BigNumber(0.05)
+  const LEVIN_PER_BLOCK = new BigNumber(0.04)
 
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
@@ -163,13 +164,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             <StyledInsight>
               <span>Total APY</span>
               <span>
-                {farm.apy
+                {farm.apy && farm.active
                   ? `${farm.apy
                     .times(new BigNumber(100))
                     .toNumber()
-                    .toLocaleString('en-US')
-                    .slice(0, -1)}%`
-                  : 'Loading ...'}
+                    .toFixed(2)  
+                    }%`
+                  : farm.active ? 'Loading ...': 'Ended'}
               </span>
               {/* <span>
                 {farm.tokenAmount
@@ -264,7 +265,7 @@ const StyledCardWrapper = styled.div`
 
 const StyledTitle = styled.h4`
   color: ${(props) => props.theme.color.grey[600]};
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   margin: ${(props) => props.theme.spacing[2]}px 0 0;
   padding: 0;

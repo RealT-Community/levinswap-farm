@@ -37,31 +37,33 @@ export const isWeth = (id) => id.includes("WXDAI")
 export const getFarms = (sushi) => {
   return sushi
     ? sushi.contracts.pools.map(
-        ({
-          pid,
-          name,
-          symbol,
-          icon,
-          tokenAddress,
-          tokenSymbol,
-          tokenContract,
-          lpAddress,
-          lpContract,
-        }) => ({
-          pid,
-          id: symbol,
-          name,
-          lpToken: symbol,
-          lpTokenAddress: lpAddress,
-          lpContract,
-          tokenAddress,
-          tokenSymbol,
-          tokenContract,
-          earnToken: 'sushi',
-          earnTokenAddress: sushi.contracts.sushi.options.address,
-          icon,
-        }),
-      )
+      ({
+        pid,
+        name,
+        symbol,
+        icon,
+        tokenAddress,
+        tokenSymbol,
+        tokenContract,
+        lpAddress,
+        lpContract,
+        active,
+      }) => ({
+        pid,
+        id: symbol,
+        name,
+        lpToken: symbol,
+        lpTokenAddress: lpAddress,
+        lpContract,
+        tokenAddress,
+        tokenSymbol,
+        tokenContract,
+        earnToken: 'sushi',
+        earnTokenAddress: sushi.contracts.sushi.options.address,
+        icon,
+        active,
+      }),
+    )
     : []
 }
 
