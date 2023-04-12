@@ -15,7 +15,7 @@ const Nav: React.FC = () => {
         Staking
       </StyledLink>*/}
       <StyledAbsoluteLink
-        href="https://app.levinswap.org/"
+        href="https://app.levinswap.realt.community/"
         target="_blank"
       >
         Swap

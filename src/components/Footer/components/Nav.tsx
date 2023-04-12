@@ -12,7 +12,7 @@ const Nav: React.FC = () => {
       </StyledLink>
       <StyledLink
         target="_blank"
-        href="https://info.levinswap.org/pair/0x4eeb519888b027b50d3d221abdb47d9072e2e838"
+        href="https://info.levinswap.realt.community/pair/0x4eeb519888b027b50d3d221abdb47d9072e2e838"
       >
         LEVIN-XDAI
       </StyledLink>
